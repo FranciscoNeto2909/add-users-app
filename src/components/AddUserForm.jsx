@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux"
 import { addUser } from "../redux/slice/Slice"
 import { useState } from "react"
+import { v4 as uuidv4 } from 'uuid'
 
 export default function AddUserForm() {
     
@@ -13,13 +14,14 @@ export default function AddUserForm() {
 
     function handlePostUser() {
         const user = {
-            id:1,
+            id:uuidv4(),
             name,
             age,
             avatar,
             city
         }
         dispatch(addUser(user))
+        console.log(user)
     }
 
     return(

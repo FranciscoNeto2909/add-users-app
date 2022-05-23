@@ -20,7 +20,7 @@ export const addUser = createAsyncThunk("postUser", async (user) => {
 export const removeUser = createAsyncThunk('removeUser',async (id) => {
     try {
         const res = await axios.delete(`http://localhost:3001/user/${id}`)
-        return console.log(res.data)
+        return console.log(res)
     } catch (error) {
         console.log(error.message)
     }
